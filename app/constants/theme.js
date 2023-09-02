@@ -1,0 +1,138 @@
+export const COLORS = {
+  primary: "#0084CB",
+  secondary: "#3FF4FF",
+  secondaryGreen: "#FF6153",
+  tertiaryGreen: "#CAE7BD",
+  facebook: "#427BFB",
+  google: "#EA4335",
+  lightBg: "#E9F9F6",
+  cho: "#757575",
+  white: "#FFF",
+  gray: "#E6E6E6",
+  blutBtn: "#00B0FC",
+  bgs: "#019EF3",
+  balance: "#f7f7ef",
+  myBorder: "#DDDDDB",
+  bg: "#F4F7F8",
+  bgStyle: "#081A32",
+  black: "#000",
+  blackLight: "#505050",
+  textLight: "#CACFD9",
+  orange: "#FF6153",
+  danger: "#EF403B",
+  border: "#F0F0F8",
+  green: "#00983D",
+  fino: "#D8D8D9",
+  textInputColor: "#F4F6F9",
+  yellow: "#f49201",
+  text: "#333333",
+  firstOne: "#EA7474",
+  secondOne: "#CE4FE3",
+  thirdOne: "#4EE1A4",
+  fourthOne: "#DAF7A6",
+};
+
+export const SIZES = {
+  base: 10,
+  small: 12,
+  graySmall: 11,
+  font: 14,
+  h4: 16,
+  h3: 18,
+  h2: 24,
+  h1: 34,
+};
+
+export const FONTS = {
+  bold: "EncodeSansBold",
+  boldItalic: "EncodeSansBoldItalic",
+  semiBold: "EncodeSansSemiBold",
+  semiBoldItalic: "EncodeSansSemiBoldItalic",
+  medium: "EncodeSansMedium",
+  mediumItalic: "EncodeSansMediumItalic",
+  regular: "EncodeSansRegular",
+  regularItalic: "EncodeSansRegularItalic",
+  light: "EncodeSansLight",
+  lightItalic: "EncodeSansLightItalic",
+};
+
+export const SHADOWS = {
+  light: {
+    shadowColor: COLORS.gray,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.22,
+    shadowRadius: 2.22,
+
+    elevation: 3,
+  },
+  medium: {
+    shadowColor: COLORS.gray,
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+
+    elevation: 7,
+  },
+  dark: {
+    shadowColor: COLORS.gray,
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.41,
+    shadowRadius: 9.11,
+
+    elevation: 14,
+  },
+};
+
+export const icons = {
+  facebook: require("../../assets/icons/facebook.png"),
+  google: require("../../assets/icons/google.png"),
+  homec: require("../../assets/icons/homec.png"),
+  home: require("../../assets/icons/home.png"),
+  inbox: require("../../assets/icons/inbox.png"),
+  inboxc: require("../../assets/icons/inboxc.png"),
+  listing: require("../../assets/icons/listing.png"),
+  listingc: require("../../assets/icons/listingc.png"),
+  post: require("../../assets/icons/post.png"),
+  postc: require("../../assets/icons/post.png"),
+  profile: require("../../assets/icons/profile.png"),
+  profilec: require("../../assets/icons/profilec.png"),
+  lock: require("../../assets/icons/lock.png"),
+  headerProfile: require("../../assets/icons/headerprofile.png"),
+  bodyPart: require("../../assets/icons/bodyPart.png"),
+  engine: require("../../assets/icons/enginea.png"),
+  lighting: require("../../assets/icons/lightning.png"),
+  braking: require("../../assets/icons/breaking.png"),
+  eSystem: require("../../assets/icons/electricalsystem.png"),
+  search: require("../../assets/icons/searcb.png"),
+  marker: require("../../assets/icons/location.png"),
+  bell: require("../../assets/icons/bell.png"),
+  edit: require("../../assets/icons/edit.png"),
+  editWhite: require("../../assets/icons/editWhite.png"),
+};
+
+export const images = {
+  logo: require("../../assets/images/logo.png"),
+  lamp: require("../../assets/images/lamp.png"),
+  pro: require("../../assets/images/pro.png"),
+  rover: require("../../assets/images/rover.png"),
+  vac: require("../../assets/images/vac.png"),
+  honda: require("../../assets/images/honda.png"),
+  tesla: require("../../assets/images/tesla.png"),
+  bmw: require("../../assets/images/bmw.png"),
+  kia: require("../../assets/images/kia.png"),
+  person1: require("../../assets/images/person1.png"),
+  person2: require("../../assets/images/person2.png"),
+  person3: require("../../assets/images/person3.png"),
+  message1: require("../../assets/images/message1.png"),
+  message2: require("../../assets/images/message2.png"),
+  message3: require("../../assets/images/message3.png"),
+};
