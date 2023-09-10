@@ -9,11 +9,7 @@ import {
 import React from "react";
 
 const AppScreen = ({ children, style }) => {
-  return (
-    <SafeAreaView style={[styles.mainContainer, style]}>
-      {children}
-    </SafeAreaView>
-  );
+  return <View style={[styles.mainContainer, style]}>{children}</View>;
 };
 
 export default AppScreen;

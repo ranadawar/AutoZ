@@ -43,6 +43,13 @@ const colors = [
     image: images.lamp,
     gradient: ["#3FF3FF", "#019EF3"],
   },
+  {
+    id: 4,
+    title: "Bmw 5gt f07 tail lamp left left rear ",
+    price: "€ 100",
+    image: images.lamp,
+    gradient: ["#3FF3FF", "#019EF3"],
+  },
 ];
 
 const six = [
@@ -123,8 +130,8 @@ const Home = () => {
 
   return (
     <AppScreen>
-      <MainHeader />
       <View style={styles.mainContainer}>
+        <MainHeader />
         <ScrollView showsVerticalScrollIndicator={false}>
           <SearchInput />
           <View style={styles.locationContainer}>
@@ -247,7 +254,7 @@ const { width } = Dimensions.get("window");
 
 const styles = StyleSheet.create({
   coverContainer: {
-    height: 380,
+    height: 335,
     marginHorizontal: 20,
   },
   forYou: {
@@ -289,6 +296,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
+    paddingTop: 45,
   },
   price: {
     fontSize: 22,
@@ -301,7 +309,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginRight: 50,
-    height: 325,
+    height: 284,
     marginLeft: 15,
     borderRadius: 30,
     padding: 15,
@@ -333,7 +341,7 @@ const styles = StyleSheet.create({
     marginHorizontal: Dimensions.get("window").width / 85,
   },
   sixImagesCover: {
-    marginVertical: 20,
+    marginVertical: 2,
     marginHorizontal: 20,
   },
   imageSix: {

@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React from "react";
 import { COLORS, FONTS, icons } from "../constants/theme";
+import AppGradient from "./AppGradient";
 
 const AppButton = ({
   bgColor = COLORS.secondary,
@@ -17,6 +18,9 @@ const AppButton = ({
   title = "Button",
   titleStyle,
   titleColor = COLORS.white,
+  iconStyle,
+  gradient,
+  gradientStyle,
 }) => {
   return (
     <TouchableOpacity
@@ -24,11 +28,22 @@ const AppButton = ({
       onPress={onPress}
     >
       {image && (
-        <Image source={image} resizeMode="contain" style={styles.image} />
+        <Image
+          source={image}
+          resizeMode="contain"
+          style={[styles.image, iconStyle]}
+        />
       )}
       <Text style={[styles.title, titleStyle, { color: titleColor }]}>
         {title}
       </Text>
+      {gradient && (
+        <AppGradient
+          style={gradientStyle}
+          primary={COLORS.primary}
+          secondary={COLORS.secondary}
+        />
+      )}
     </TouchableOpacity>
   );
 };

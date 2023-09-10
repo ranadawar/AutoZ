@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     flex: 1,
+    paddingTop: 45,
   },
   secondRow: {
     flexDirection: "row",

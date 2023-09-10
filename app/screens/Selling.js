@@ -77,4 +77,7 @@ const styles = StyleSheet.create({
   topContainer: {
     height: 240,
   },
+  mainContainer: {
+    paddingTop: 55,
+  },
 });

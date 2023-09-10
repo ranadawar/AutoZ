@@ -13,7 +13,7 @@ const StatsCard = ({
         <Text style={styles.title}>{numberOfFollowers}</Text>
         <Text style={styles.subtitle}>Followers</Text>
       </View>
-      <View style={styles.innerContainer}>
+      <View style={styles.innerContainer2}>
         <Text style={styles.title}>{numberOfFollowing}</Text>
         <Text style={styles.subtitle}>Following</Text>
       </View>
@@ -31,6 +31,18 @@ const styles = StyleSheet.create({
   innerContainer: {
     justifyContent: "center",
     alignItems: "center",
+  },
+  innerContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  innerContainer2: {
+    justifyContent: "center",
+    alignItems: "center",
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    paddingHorizontal: 25,
+    borderColor: "#0084CB",
   },
   mainContainer: {
     padding: 20,

@@ -7,6 +7,9 @@ import Inbox from "../screens/Inbox";
 import { icons } from "../constants/theme";
 import Selling from "../screens/Selling";
 import Profile from "../screens/Profile";
+import PostItem from "../screens/PostItem";
+import ProductDetails from "../screens/ProductDetails";
+import Testing from "../screens/Testing";
 
 const Tab = createBottomTabNavigator();
 
@@ -41,7 +44,7 @@ const AppNavigator = () => {
       />
       <Tab.Screen
         name="Post"
-        component={Inbox}
+        component={PostItem}
         options={{
           tabBarIcon: ({ focused }) => (
             <Image

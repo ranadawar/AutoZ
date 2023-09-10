@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
 import { COLORS, FONTS } from "../constants/theme";
+import { LinearGradient } from "expo-linear-gradient";
 
 const SwitchBtns = ({
   btnOnePress,
@@ -29,6 +30,8 @@ const SwitchBtns = ({
           {titleTwo}
         </Text>
       </TouchableOpacity>
+
+      <LinearGradient style={styles.full} colors={["#000", "#000"]} />
     </View>
   );
 };
@@ -36,10 +39,19 @@ const SwitchBtns = ({
 export default SwitchBtns;
 
 const styles = StyleSheet.create({
+  full: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    zIndex: -1,
+    opacity: 0.3,
+    borderRadius: 30,
+  },
   mainContainer: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: COLORS.black,
     marginHorizontal: 25,
     borderRadius: 30,
   },

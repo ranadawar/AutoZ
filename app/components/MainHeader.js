@@ -53,7 +53,11 @@ const MainHeader = () => {
         <TouchableOpacity onPress={() => handleMenuPress()}>
           <MaterialCommunityIcons name="menu" color={COLORS.text} size={28} />
         </TouchableOpacity>
-        <Image source={images.logo} resizeMode="contain" style={styles.image} />
+        <Image
+          source={require("../../assets/images/logob.png")}
+          resizeMode="contain"
+          style={styles.image}
+        />
         <View style={styles.rowContainer}>
           <Image
             source={icons.headerProfile}

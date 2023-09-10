@@ -41,7 +41,7 @@ const Switch = ({ onChange, active }) => {
                 {
                   translateX: translateX.interpolate({
                     inputRange: [0, 1],
-                    outputRange: [0, 28], // Adjust this value based on your switch design
+                    outputRange: [0, 21], // Adjust this value based on your switch design
                   }),
                 },
               ],
