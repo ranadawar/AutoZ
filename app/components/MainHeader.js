@@ -73,7 +73,11 @@ const MainHeader = () => {
           <View style={styles.innerRowContainer}>
             <Text style={styles.categoryTitle}>All Categories</Text>
             <TouchableOpacity onPress={() => setIsShow(false)}>
-              <Entypo name="cross" size={30} color={COLORS.text} />
+              <Image
+                resizeMode="contain"
+                style={{ width: 15, height: 15 }}
+                source={require("../../assets/icons/crossss.png")}
+              />
             </TouchableOpacity>
           </View>
           <FlatList
@@ -101,15 +105,19 @@ const styles = StyleSheet.create({
     position: "absolute",
     height: 400,
     backgroundColor: COLORS.white,
-    top: 132,
+    top: 128,
     left: 0,
     right: 0,
     zIndex: 1,
+    borderTopColor: "#BFDAE7",
+    borderTopWidth: 2,
+    paddingHorizontal: 7,
   },
   categoryTitle: {
     fontSize: 24,
     fontFamily: FONTS.bold,
     color: COLORS.text,
+    marginHorizontal: -8,
   },
   loginText: {
     fontSize: 15,

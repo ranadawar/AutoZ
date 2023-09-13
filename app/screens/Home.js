@@ -292,11 +292,13 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     marginHorizontal: 20,
-    padding: 15,
+    marginBottom: 15,
+    marginTop: 7,
   },
   mainContainer: {
     flex: 1,
     paddingTop: 45,
+    backgroundColor: COLORS.white,
   },
   price: {
     fontSize: 22,
@@ -305,10 +307,10 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
   },
   scrollViewItem: {
-    width: width - 80,
+    width: width - 90,
     flexDirection: "row",
     alignItems: "center",
-    marginRight: 50,
+    marginRight: 20,
     height: 284,
     marginLeft: 15,
     borderRadius: 30,
@@ -335,28 +337,29 @@ const styles = StyleSheet.create({
   },
 
   sixImages: {
-    width: 120,
-    height: 120,
+    width: 130,
+    height: 130,
     borderRadius: 15,
-    marginHorizontal: Dimensions.get("window").width / 85,
+    marginBottom: 10,
   },
   sixImagesCover: {
     marginVertical: 2,
     marginHorizontal: 20,
   },
   imageSix: {
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
   },
 
   brands: {
     marginHorizontal: 20,
-    marginBottom: 20,
+    marginBottom: 40,
   },
 
   rowLates: {
     flexDirection: "row",
     justifyContent: "space-around",
+    marginHorizontal: 20,
   },
 
   viewAll: {

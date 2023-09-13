@@ -55,6 +55,11 @@ const WelcomeScreen = ({ navigation }) => {
           acknowledge the AutoZ{" "}
           <Text style={styles.inlineLink}>Privacy Policy</Text>
         </Text>
+        <Image
+          resizeMode="contain"
+          style={styles.image3}
+          source={require("../../assets/images/welcomeg.png")}
+        />
       </View>
     </AppScreen>
   );
@@ -105,6 +110,11 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.medium,
     marginHorizontal: 5,
     color: COLORS.blutBtn,
+  },
+  image3: {
+    width: 250,
+    height: 250,
+    alignSelf: "center",
   },
   lockIcon: {
     width: 26,

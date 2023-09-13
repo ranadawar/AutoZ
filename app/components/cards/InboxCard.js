@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 7,
+    marginBottom: 20,
   },
   personImage: {
     width: 60,

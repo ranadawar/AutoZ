@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 22,
+    padding: 20,
   },
   headerTitle: {
     fontFamily: FONTS.bold,
@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
   secondRow: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 15,
+    padding: 20,
   },
   topContainer: {
     height: 240,
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 15,
-    marginHorizontal: 13,
+    paddingVertical: 15,
+    marginHorizontal: 20,
   },
 });

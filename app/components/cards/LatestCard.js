@@ -28,12 +28,12 @@ const styles = StyleSheet.create({
     left: 10,
   },
   image: {
-    width: 170,
+    width: 180,
     height: 125,
     borderRadius: 20,
   },
   mainContainer: {
-    width: 170,
+    width: 190,
     height: 170,
   },
   title: {

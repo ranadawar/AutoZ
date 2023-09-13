@@ -35,5 +35,6 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     alignItems: "center",
+    marginRight: 10,
   },
 });
