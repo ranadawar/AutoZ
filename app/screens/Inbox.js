@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
   editContainer: {
     flexDirection: "row",
     alignItems: "center",
+    marginHorizontal: 20,
   },
   editIcon: {
     width: 30,
@@ -86,8 +87,8 @@ const styles = StyleSheet.create({
   },
   fourthMain: {
     flex: 1,
-    paddingHorizontal: 20,
     paddingTop: 15,
+    paddingHorizontal: 20,
   },
   groupBy: {
     fontFamily: FONTS.medium,
@@ -98,11 +99,12 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 20,
+    marginHorizontal: 20,
   },
   headerTitle: {
     fontFamily: FONTS.bold,
     fontSize: 24,
+    paddingVertical: 20,
   },
   mainContainer: {
     flex: 1,
@@ -111,7 +113,8 @@ const styles = StyleSheet.create({
   secondRow: {
     flexDirection: "row",
     alignItems: "center",
-    padding: 20,
+    paddingVertical: 20,
+    marginHorizontal: 20,
   },
   topContainer: {
     height: 240,
@@ -122,6 +125,5 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "space-between",
     paddingVertical: 15,
-    marginHorizontal: 20,
   },
 });

@@ -1,4 +1,5 @@
 import {
+  Image,
   ScrollView,
   StyleSheet,
   Text,
@@ -28,11 +29,10 @@ const DropDown = ({
         <View style={styles.firstContainer}>
           <Text style={styles.place}>{placeholder}</Text>
 
-          <MaterialCommunityIcons
-            name="chevron-down"
-            color={COLORS.cho}
-            size={25}
-            style={{ transform: [{ rotate: showOptions ? "180deg" : "0deg" }] }}
+          <Image
+            source={require("../../assets/icons/dropdowns.png")}
+            style={{ width: 13, height: 13 }}
+            resizeMode="contain"
           />
         </View>
         {selectedItem?.name ? (

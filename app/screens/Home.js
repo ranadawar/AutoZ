@@ -307,10 +307,10 @@ const styles = StyleSheet.create({
     color: COLORS.primary,
   },
   scrollViewItem: {
-    width: width - 90,
+    width: width - 82,
     flexDirection: "row",
     alignItems: "center",
-    marginRight: 20,
+    marginRight: 15,
     height: 284,
     marginLeft: 15,
     borderRadius: 30,
@@ -337,18 +337,18 @@ const styles = StyleSheet.create({
   },
 
   sixImages: {
-    width: 130,
-    height: 130,
+    width: 123,
+    height: 123,
     borderRadius: 15,
     marginBottom: 10,
   },
   sixImagesCover: {
     marginVertical: 2,
-    marginHorizontal: 20,
+    marginHorizontal: 30,
   },
   imageSix: {
-    width: 120,
-    height: 120,
+    width: 110,
+    height: 110,
   },
 
   brands: {

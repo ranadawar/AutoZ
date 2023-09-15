@@ -2,8 +2,8 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { COLORS } from "../constants/theme";
 
-const Separator = () => {
-  return <View style={styles.mainContainer} />;
+const Separator = ({ style }) => {
+  return <View style={[styles.mainContainer, style]} />;
 };
 
 export default Separator;

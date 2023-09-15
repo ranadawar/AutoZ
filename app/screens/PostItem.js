@@ -4,6 +4,7 @@ import {
   ScrollView,
   StyleSheet,
   Text,
+  TouchableOpacity,
   View,
 } from "react-native";
 import React, { useState } from "react";
@@ -21,6 +22,8 @@ import AppTextInput from "../components/AppTextInput";
 import DropDown from "../components/DropDown";
 import Separator from "../components/Separator";
 import Switch from "../components/SwitchBtn";
+import AppButtonHorizontal from "../components/AppButtonHorizontal";
+import ImageInputList from "../components/ImageInputList";
 const screenHeight = Dimensions.get("window").height;
 
 const categories = [
@@ -58,6 +61,11 @@ const selectedModel = {
 const PostItem = ({ navigation }) => {
   const [activeStep, setActiveStep] = useState(0);
   const [switchValue, setSwitchValue] = useState(true);
+  const [images, setImages] = useState([
+    require("../../assets/images/selecti.png"),
+  ]);
+
+  const [isUpload, setIsUpload] = useState(false);
 
   const onNextStep = () => {
     setActiveStep(activeStep + 1);
@@ -65,6 +73,18 @@ const PostItem = ({ navigation }) => {
 
   const onPrevStep = () => {
     setActiveStep(activeStep - 1);
+  };
+
+  const takePhoto = () => {
+    setIsUpload(true);
+  };
+
+  const handleCancel = () => {
+    navigation.goBack();
+    setTimeout(() => {
+      navigation.navigate("pdetails");
+    }, 1000);
+    setIsUpload(false);
   };
   return (
     <AppScreen>
@@ -97,47 +117,143 @@ const PostItem = ({ navigation }) => {
             >
               <View style={{ flex: 1, paddingTop: 27 }}>
                 <ScrollView>
-                  <View style={styles.topContainer1}>
-                    <View style={{ width: "100%", marginTop: -40 }}>
-                      <HeaderPost />
-                    </View>
-                    <View style={styles.imageContainer1}>
-                      <Image
-                        resizeMode="contain"
-                        source={require("../../assets/images/camerama.png")}
-                        style={styles.cameraMain}
-                      />
-                      <AppGradient
-                        style={{
-                          borderRadius: "50%",
-                          zIndex: -1,
-                          opacity: 0.3,
-                        }}
-                      />
-                    </View>
-                    <View style={styles.btnContainer}>
-                      <AppButton
-                        title="Take Photo"
-                        bgColor="transparent"
-                        titleColor="#00B0FC"
-                        style={{
-                          borderWidth: 1,
-                          borderColor: "#00B0FC",
-                          minWidth: Dimensions.get("window").width - 100,
-                        }}
-                        image={icons.camera}
-                      />
-                      <AppButton
-                        title="Select Photo"
-                        image={icons.gallery}
-                        bgColor={COLORS.bgs}
+                  <View
+                    style={
+                      !isUpload ? styles.topContainer1 : styles.topContainer1s
+                    }
+                  >
+                    <View
+                      style={
+                        isUpload
+                          ? { marginBottom: -40, marginTop: 70, width: "100%" }
+                          : { width: "100%", marginTop: -40 }
+                      }
+                    >
+                      <HeaderPost
+                        rightText="Cancel"
+                        onPressIcon={() => navigation.goBack()}
+                        title="Post an Item"
+                        titleColor={isUpload ? COLORS.black : COLORS.white}
                       />
                     </View>
 
-                    <LinearGradient
-                      style={styles.topContainer1Absolute}
-                      colors={[COLORS.primary, COLORS.secondary]}
-                    />
+                    {!isUpload ? (
+                      <>
+                        <View style={{ marginTop: -35 }}>
+                          <Image
+                            resizeMode="cover"
+                            style={{ width: 200, height: 200 }}
+                            source={require("../../assets/images/imagei.png")}
+                          />
+                        </View>
+
+                        <View style={styles.btnContainer}>
+                          <AppButton
+                            title="Take Photo"
+                            bgColor="transparent"
+                            titleColor="#00B0FC"
+                            style={{
+                              borderWidth: 1,
+                              borderColor: "#00B0FC",
+                              minWidth: Dimensions.get("window").width - 100,
+                              paddingVertical: 10,
+                            }}
+                            onPress={() => takePhoto()}
+                            image={icons.camera}
+                          />
+                          <AppButton
+                            title="Select Photo"
+                            image={icons.gallery}
+                            bgColor={COLORS.bgs}
+                            style={{ paddingVertical: 10 }}
+                          />
+                          <Text
+                            style={{
+                              textAlign: "center",
+                              fontFamily: FONTS.regular,
+                              fontSize: 13,
+                              color: COLORS.white,
+                              marginTop: 5,
+                            }}
+                          >
+                            Add your cover photo first
+                          </Text>
+                        </View>
+                      </>
+                    ) : (
+                      <View>
+                        <View style={{ marginTop: 70 }}>
+                          <View style={{ marginBottom: 25 }}>
+                            <ImageInputList imageUris={images} />
+                          </View>
+
+                          <View
+                            style={{
+                              flexDirection: "row",
+                              alignItems: "center",
+                              marginVertical: 5,
+                            }}
+                          >
+                            <Image
+                              resizeMode="contain"
+                              style={{ width: 13, height: 13 }}
+                              source={require("../../assets/icons/pencil.png")}
+                            />
+                            <Text
+                              style={{
+                                fontFamily: FONTS.regular,
+                                fontSize: 15,
+                                marginLeft: 7,
+                              }}
+                            >
+                              Tap photo to edit
+                            </Text>
+                          </View>
+                          <View
+                            style={{
+                              flexDirection: "row",
+                              alignItems: "center",
+                              marginVertical: 5,
+                            }}
+                          >
+                            <Image
+                              resizeMode="contain"
+                              style={{ width: 13, height: 13 }}
+                              source={require("../../assets/icons/pencil.png")}
+                            />
+                            <Text
+                              style={{
+                                fontFamily: FONTS.regular,
+                                fontSize: 15,
+                                marginLeft: 7,
+                              }}
+                            >
+                              Tap photo to edit
+                            </Text>
+                          </View>
+                        </View>
+
+                        <LinearGradient
+                          style={{
+                            position: "absolute",
+                            left: 0,
+                            right: 0,
+                            top: 100,
+                            bottom: 70,
+                            zIndex: -1,
+                            opacity: 0.2,
+                            width: "100%",
+                            marginLeft: -80,
+                          }}
+                          colors={[
+                            COLORS.white,
+                            COLORS.white,
+                            COLORS.white,
+                            COLORS.primary,
+                          ]}
+                        />
+                      </View>
+                    )}
                   </View>
                   <View style={styles.bottomContainer1}>
                     <Text style={styles.titleText}>Title</Text>
@@ -151,23 +267,6 @@ const PostItem = ({ navigation }) => {
                       icon={false}
                       numberOfLines={5}
                       height={100}
-                    />
-                  </View>
-                  <View
-                    style={{
-                      marginTop: 30,
-                      marginBottom: 100,
-                      marginHorizontal: 20,
-                      borderRadius: 10,
-                      overflow: "hidden",
-                    }}
-                  >
-                    <AppButton
-                      gradientStyle={{ borderRadius: 10 }}
-                      title="Next"
-                      gradient={true}
-                      image={false}
-                      onPress={onNextStep}
                     />
                   </View>
                 </ScrollView>
@@ -190,12 +289,13 @@ const PostItem = ({ navigation }) => {
                 }}
               >
                 <View style={styles.headerSecond}>
-                  <MaterialCommunityIcons
-                    name="chevron-left"
-                    color={COLORS.bgs}
-                    size={35}
-                    onPress={onPrevStep}
-                  />
+                  <TouchableOpacity onPress={onPrevStep}>
+                    <MaterialCommunityIcons
+                      name="chevron-left"
+                      color={COLORS.bgs}
+                      size={35}
+                    />
+                  </TouchableOpacity>
                   <Text style={styles.titleTextBig}>Details</Text>
                   <Text style={styles.cancle}>Cancel</Text>
                   <LinearGradient
@@ -235,16 +335,6 @@ const PostItem = ({ navigation }) => {
                     selectedItem={selectedModel}
                   />
                 </View>
-
-                <View style={{ marginTop: 55, marginHorizontal: 20 }}>
-                  <AppButton
-                    gradientStyle={{ borderRadius: 10 }}
-                    title="Next"
-                    gradient={true}
-                    image={false}
-                    onPress={onNextStep}
-                  />
-                </View>
               </View>
             </ProgressStep>
 
@@ -264,7 +354,9 @@ const PostItem = ({ navigation }) => {
                     onPress={onPrevStep}
                   />
                   <Text style={styles.titleTextBig}>Price</Text>
-                  <Text style={styles.cancle}>Cancel</Text>
+                  <Text onPress={handleCancel} style={styles.cancle}>
+                    Cancel
+                  </Text>
                 </View>
 
                 <Image
@@ -280,24 +372,7 @@ const PostItem = ({ navigation }) => {
                     onChange={() => setSwitchValue(!switchValue)}
                   />
                 </View>
-
-                <View
-                  style={{
-                    marginTop: 120,
-                    marginBottom: 100,
-                    marginHorizontal: 20,
-                    borderRadius: 10,
-                    overflow: "hidden",
-                  }}
-                >
-                  <AppButton
-                    gradientStyle={{ borderRadius: 10 }}
-                    title="Next"
-                    gradient={true}
-                    image={false}
-                    onPress={() => navigation.navigate("details")}
-                  />
-                </View>
+                <Separator style={{ marginHorizontal: 25, marginTop: -10 }} />
               </View>
             </ProgressStep>
             <ProgressStep label="Finish">
@@ -307,6 +382,27 @@ const PostItem = ({ navigation }) => {
             </ProgressStep>
             {/* // All your step components should go here */}
           </ProgressSteps>
+          <View
+            style={{
+              marginTop: 30,
+              marginBottom: 30,
+              marginHorizontal: 20,
+              borderRadius: 10,
+              overflow: "hidden",
+              position: "absolute",
+              bottom: 0,
+              left: 0,
+              right: 0,
+            }}
+          >
+            <AppButtonHorizontal
+              gradientStyle={{ borderRadius: 10 }}
+              title="Next"
+              gradient={true}
+              image={false}
+              onPress={onNextStep}
+            />
+          </View>
         </View>
       </View>
     </AppScreen>
@@ -314,6 +410,7 @@ const PostItem = ({ navigation }) => {
 };
 
 export default PostItem;
+//hide bottom tab bar
 
 const styles = StyleSheet.create({
   bottomContainer1: {
@@ -326,8 +423,7 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   btnContainer: {
-    marginBottom: -20,
-    marginTop: 15,
+    marginTop: -25,
   },
   imageContainer1: {
     width: 90,
@@ -344,6 +440,14 @@ const styles = StyleSheet.create({
   topContainer1: {
     height: 390,
     backgroundColor: "#000000",
+    justifyContent: "center",
+    alignItems: "center",
+    width: Dimensions.get("window").width,
+    marginTop: 35,
+  },
+  topContainer1s: {
+    height: 390,
+    backgroundColor: "#fff",
     justifyContent: "center",
     alignItems: "center",
     width: Dimensions.get("window").width,

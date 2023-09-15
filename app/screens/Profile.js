@@ -9,24 +9,21 @@ import StatsCard from "../components/cards/StatsCard";
 import TitleText from "../components/profile/TitleText";
 import ProfileSection from "../components/profile/ProfileSection";
 import Separator from "../components/Separator";
+const numberOfFollowers = 100;
+const numberOfFollowing = 200;
+const numberOfLikes = 300;
 
 const Profile = () => {
   return (
-    <AppScreen>
+    <AppScreen style={{ backgroundColor: COLORS.white }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.topContainer}>
           <Header />
           <View style={styles.imageContainer}>
             <Image
-              source={images.person1}
+              source={require("../../assets/images/prori.png")}
               resizeMode="cover"
               style={styles.profilePicture}
-            />
-            <AppGradient style={styles.absolute} />
-            <AppGradient
-              primary="#8817AF"
-              secondary="#8817AF"
-              style={styles.absoluteSecond}
             />
           </View>
           <Text style={styles.name}>Jordon James</Text>
@@ -38,30 +35,40 @@ const Profile = () => {
         </View>
 
         <View>
-          <StatsCard />
+          <YourComponent />
         </View>
         <View style={styles.bottomContainers}>
           <TitleText title="Transactions" />
           <ProfileSection image={icons.dollar} />
-          <Separator />
+          <Separator style={{ marginHorizontal: -2 }} />
           <ProfileSection title="Payment & Deposit Methods" />
           <View
-            style={{ height: 12, backgroundColor: "#EBF3F8", marginBottom: 15 }}
+            style={{
+              height: 5,
+              backgroundColor: "#EBF3F8",
+              marginBottom: 15,
+              marginHorizontal: -20,
+            }}
           />
           <TitleText title="Saves" />
           <ProfileSection title="Saved items" image={icons.heartc} />
-          <Separator />
+          <Separator style={{ marginHorizontal: -2 }} />
           <ProfileSection title="Search alerts" image={icons.bellc} />
           <View
-            style={{ height: 12, backgroundColor: "#EBF3F8", marginBottom: 15 }}
+            style={{
+              height: 5,
+              backgroundColor: "#EBF3F8",
+              marginBottom: 15,
+              marginHorizontal: -20,
+            }}
           />
           <TitleText title="Account" />
           <ProfileSection title="Account Settings" image={icons.setting} />
-          <Separator />
+          <Separator style={{ marginHorizontal: -2 }} />
           <ProfileSection title="Public Profile" image={icons.profilep} />
-          <Separator />
+          <Separator style={{ marginHorizontal: -2 }} />
           <ProfileSection title="Custom Profile Link" image={icons.link} />
-          <Separator />
+          <Separator style={{ marginHorizontal: -2 }} />
           <ProfileSection title="Promote Plus" image={icons.promote} />
         </View>
       </ScrollView>
@@ -70,6 +77,27 @@ const Profile = () => {
 };
 
 export default Profile;
+
+const YourComponent = () => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.box}>
+        {/* Content for the first container */}
+        <Text style={styles.btitle}>{numberOfFollowers}</Text>
+        <Text style={styles.bsubtitle}>Followers</Text>
+      </View>
+      <View style={styles.boxCenter}>
+        <Text style={styles.btitle}>{numberOfFollowing}</Text>
+        <Text style={styles.bsubtitle}>Following</Text>
+      </View>
+      <View style={styles.box}>
+        {/* Content for the third container */}
+        <Text style={styles.btitle}>{numberOfLikes}</Text>
+        <Text style={styles.bsubtitle}>Likes</Text>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   absolute: {
@@ -92,14 +120,18 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   profilePicture: {
-    width: 130,
-    height: 130,
+    width: 400,
+    height: 400,
+    marginLeft: -140,
+    opacity: 0.9,
+    marginBottom: -40,
   },
   topContainer: {
     backgroundColor: "#061628",
-    height: 345,
+    height: 380,
     borderEndEndRadius: 45,
     borderEndStartRadius: 45,
+    paddingTop: 40,
   },
   imageContainer: {
     width: 140,
@@ -132,5 +164,43 @@ const styles = StyleSheet.create({
     color: COLORS.white,
     textAlign: "center",
     marginVertical: 10,
+  },
+
+  bsubtitle: {
+    color: COLORS.white,
+    fontSize: 16,
+    fontFamily: FONTS.medium,
+  },
+  btitle: {
+    fontFamily: FONTS.bold,
+    fontSize: 20,
+    marginBottom: 10,
+    color: COLORS.white,
+  },
+  container: {
+    flexDirection: "row", // Arrange the containers horizontally
+    justifyContent: "space-between", // Equal space between containers
+    alignItems: "center", // Center content vertically
+    paddingHorizontal: 10, // Add some horizontal padding for spacing
+    flex: 1, // Use available parent view space equally
+    marginTop: -30,
+    borderRadius: 20,
+    backgroundColor: "#019EF3",
+    marginHorizontal: 20,
+  },
+  box: {
+    flex: 1, // Equal space distribution among three containers
+    alignItems: "center", // Center content horizontally
+    justifyContent: "center", // Center content vertically
+    height: 100, // Set a fixed height for the containers (you can adjust as needed)
+  },
+  boxCenter: {
+    flex: 1, // Equal space distribution among three containers
+    alignItems: "center", // Center content horizontally
+    justifyContent: "center", // Center content vertically
+    height: 100, // Set a fixed height for the containers (you can adjust as needed)
+    borderLeftWidth: 1,
+    borderRightWidth: 1,
+    borderColor: "#0084CB",
   },
 });

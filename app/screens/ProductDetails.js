@@ -20,8 +20,9 @@ const ProductDetails = ({ navigation }) => {
   const onPressViewSimilar = () => {
     console.log("View Similar");
   };
+
   return (
-    <AppScreen>
+    <AppScreen style={{ backgroundColor: COLORS.white }}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.topContainer}>
           <Header onPressBack={() => navigation.goBack()} />
@@ -314,7 +315,6 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     fontSize: 30,
     color: COLORS.text,
-    maxWidth: "%",
   },
   title: {
     fontFamily: FONTS.medium,
@@ -359,7 +359,7 @@ const styles = StyleSheet.create({
   viewOfDetailBox: {
     borderWidth: 1,
     borderColor: "#EBF3F8",
-    borderWidth: 5,
+    borderWidth: 2,
     marginVertical: 10,
     borderRadius: 30,
     backgroundColor: COLORS.white,

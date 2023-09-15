@@ -51,7 +51,11 @@ const MainHeader = () => {
     <>
       <View style={styles.mainContainer}>
         <TouchableOpacity onPress={() => handleMenuPress()}>
-          <MaterialCommunityIcons name="menu" color={COLORS.text} size={28} />
+          <Image
+            source={require("../../assets/icons/mennnnu.png")}
+            resizeMode="contain"
+            style={{ width: 30, height: 30, marginTop: 10 }}
+          />
         </TouchableOpacity>
         <Image
           source={require("../../assets/images/logob.png")}
@@ -125,6 +129,7 @@ const styles = StyleSheet.create({
   },
   mainContainer: {
     padding: 20,
+    paddingRight: 35,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -132,6 +137,7 @@ const styles = StyleSheet.create({
   image: {
     width: 130,
     height: 33,
+    marginRight: -40,
   },
   image2: {
     width: 25,

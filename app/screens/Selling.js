@@ -28,7 +28,8 @@ const listings = [
 
 const Selling = () => {
   return (
-    <AppScreen>
+    <AppScreen style={{ backgroundColor: "#EAF2F5" }}>
+      <View style={{ height: 50, backgroundColor: COLORS.secondary }} />
       <View style={styles.mainContainer}>
         <View style={styles.topContainer}>
           <View style={styles.header}>
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 22,
+    padding: 20,
   },
   headerTitle: {
     fontFamily: FONTS.bold,
@@ -78,6 +79,6 @@ const styles = StyleSheet.create({
     height: 240,
   },
   mainContainer: {
-    paddingTop: 55,
+    backgroundColor: "#EAF2F5",
   },
 });

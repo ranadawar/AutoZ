@@ -11,11 +11,27 @@ import PostItem from "../screens/PostItem";
 import ProductDetails from "../screens/ProductDetails";
 import Testing from "../screens/Testing";
 
+import { SHADOWS } from "../constants/theme";
+import PostNavigator from "./PostNavigator";
+
 const Tab = createBottomTabNavigator();
 
 const AppNavigator = () => {
   return (
-    <Tab.Navigator screenOptions={{ headerShown: false }}>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarLabelStyle: {
+          marginTop: 10,
+        },
+        tabBarStyle: {
+          paddingTop: 20,
+          shadowOffset: {
+            ...SHADOWS.dark,
+          },
+        },
+      }}
+    >
       <Tab.Screen
         name="Home"
         component={AppStackNavigator}
@@ -40,12 +56,14 @@ const AppNavigator = () => {
               style={styles.image}
             />
           ),
+          //hide tabBar on this screen
         }}
       />
       <Tab.Screen
         name="Post"
-        component={PostItem}
+        component={PostNavigator}
         options={{
+          tabBarStyle: { display: "none" },
           tabBarIcon: ({ focused }) => (
             <Image
               source={focused ? icons.postc : icons.post}

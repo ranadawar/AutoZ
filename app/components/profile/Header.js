@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React from "react";
 
 import { Entypo } from "@expo/vector-icons";
@@ -9,7 +9,11 @@ const Header = () => {
     <View style={styles.mainContainer}>
       <Text></Text>
       <Text style={styles.title}>Account</Text>
-      <Entypo name="cross" size={24} color={COLORS.white} />
+      <Image
+        source={require("../../../assets/icons/across.png")}
+        style={{ width: 13, height: 13 }}
+        resizeMode="contain"
+      />
     </View>
   );
 };
@@ -27,5 +31,6 @@ const styles = StyleSheet.create({
     fontFamily: FONTS.bold,
     fontSize: 24,
     color: COLORS.white,
+    marginRight: -10,
   },
 });

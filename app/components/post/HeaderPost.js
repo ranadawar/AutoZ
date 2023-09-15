@@ -8,7 +8,9 @@ import { COLORS, FONTS } from "../../constants/theme";
 const HeaderPost = ({
   title = "Post an Item",
   rightText = "Cancel",
+  titleColor = COLORS.white,
   onPressIcon,
+  rightTextColor = COLORS.primary,
   onPressRightText,
 }) => {
   return (
@@ -20,9 +22,11 @@ const HeaderPost = ({
           color={COLORS.primary}
         />
       </TouchableOpacity>
-      <Text style={styles.title}>{title}</Text>
+      <Text style={[styles.title, { color: titleColor }]}>{title}</Text>
       <TouchableOpacity onPress={onPressRightText}>
-        <Text style={styles.rightText}>{rightText}</Text>
+        <Text style={[styles.rightText, { color: rightTextColor }]}>
+          {rightText}
+        </Text>
       </TouchableOpacity>
     </View>
   );

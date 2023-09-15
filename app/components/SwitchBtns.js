@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   mainContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginHorizontal: 25,
+    marginHorizontal: 20,
     borderRadius: 30,
   },
   selected: {

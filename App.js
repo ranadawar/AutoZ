@@ -4,6 +4,7 @@ import AuthNavigator from "./app/navigation/AuthNavigator";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
+import PostItem from "./app/screens/PostItem";
 
 export default function App() {
   const [fontsLoaded] = useFonts({

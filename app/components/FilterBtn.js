@@ -30,6 +30,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 1,
     borderColor: COLORS.primary,
+    marginRight: 20,
   },
   sortText: {
     color: COLORS.primary,

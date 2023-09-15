@@ -7,22 +7,7 @@ const StatsCard = ({
   numberOfFollowing = 150,
   numberOfLikes = 400,
 }) => {
-  return (
-    <View style={styles.mainContainer}>
-      <View style={styles.innerContainer}>
-        <Text style={styles.title}>{numberOfFollowers}</Text>
-        <Text style={styles.subtitle}>Followers</Text>
-      </View>
-      <View style={styles.innerContainer2}>
-        <Text style={styles.title}>{numberOfFollowing}</Text>
-        <Text style={styles.subtitle}>Following</Text>
-      </View>
-      <View style={styles.innerContainer}>
-        <Text style={styles.title}>{numberOfLikes}</Text>
-        <Text style={styles.subtitle}>Likes</Text>
-      </View>
-    </View>
-  );
+  return <View style={styles.mainContainer}></View>;
 };
 
 export default StatsCard;
@@ -54,16 +39,5 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     marginHorizontal: 25,
     borderRadius: 25,
-  },
-  subtitle: {
-    color: COLORS.white,
-    fontSize: 16,
-    fontFamily: FONTS.medium,
-  },
-  title: {
-    fontFamily: FONTS.bold,
-    fontSize: 20,
-    marginBottom: 10,
-    color: COLORS.white,
   },
 });
